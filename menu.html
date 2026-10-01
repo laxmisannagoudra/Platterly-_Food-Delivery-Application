@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Platterly - Menu</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation Bar */
+
+        nav {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px gray;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            margin: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Heading */
+
+        h1 {
+            text-align: center;
+            margin: 30px;
+        }
+
+        /* Menu Container */
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px;
+        }
+
+        /* Menu Card */
+
+        .menu-card {
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .menu-card h2 {
+            color: #333;
+        }
+
+        .menu-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .rating {
+            color: green;
+            font-weight: bold;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #222;
+        }
+
+        /* Add To Cart */
+
+        .cart-btn {
+            display: block;
+            background-color: orange;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .cart-btn:hover {
+            background-color: darkorange;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="restaurant.html">
+            Restaurants
+        </a>
+
+        <a href="cart.html">
+            Cart
+        </a>
+
+        <a href="login.html">
+            Login
+        </a>
+
+    </nav>
+
+
+    <h1>
+        Our Menu
+    </h1>
+
+
+    <div class="menu-container">
+
+
+        <!-- Menu Item 1 -->
+
+        <div class="menu-card">
+        <%
+
+    List<Menu> allMenusByRestaurant = (List<Menu>)request.getAttribute("allMenusByRestaurant");   
+
+        for (Menu menu : allMenusByRestaurant) {
+
+      %>
+        
+        
+
+            <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80"
+                alt="Butter Chicken">
+
+            <h2>
+                Butter Chicken
+            </h2>
+
+            <p>
+                Item Name: Butter Chicken
+            </p>
+
+            <p>
+                Description: Tender chicken cooked in a rich,
+                creamy tomato and butter gravy.
+            </p>
+
+            <p class="price">
+                Price: ₹280
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.8
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 2 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=600&q=80"
+                alt="Chicken Biryani">
+
+            <h2>
+                Chicken Biryani
+            </h2>
+
+            <p>
+                Item Name: Chicken Biryani
+            </p>
+
+            <p>
+                Description: Fragrant basmati rice cooked
+                with spicy chicken and aromatic Indian spices.
+            </p>
+
+            <p class="price">
+                Price: ₹220
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.9
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 3 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=600&q=80"
+                alt="Margherita Pizza">
+
+            <h2>
+                Margherita Pizza
+            </h2>
+
+            <p>
+                Item Name: Margherita Pizza
+            </p>
+
+            <p>
+                Description: Classic Italian pizza topped
+                with fresh mozzarella, tomato sauce and basil.
+            </p>
+
+            <p class="price">
+                Price: ₹249
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.7
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 4 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                alt="Classic Chicken Burger">
+
+            <h2>
+                Classic Chicken Burger
+            </h2>
+
+            <p>
+                Item Name: Classic Chicken Burger
+            </p>
+
+            <p>
+                Description: Juicy grilled chicken patty
+                served with fresh lettuce, tomato and cheese.
+            </p>
+
+            <p class="price">
+                Price: ₹180
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.6
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 5 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=600&q=80"
+                alt="Masala Dosa">
+
+            <h2>
+                Masala Dosa
+            </h2>
+
+            <p>
+                Item Name: Masala Dosa
+            </p>
+
+            <p>
+                Description: Crispy South Indian dosa filled
+                with delicious spiced potato masala.
+            </p>
+
+            <p class="price">
+                Price: ₹120
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.8
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 6 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80"
+                alt="Veg Hakka Noodles">
+
+            <h2>
+                Veg Hakka Noodles
+            </h2>
+
+            <p>
+                Item Name: Veg Hakka Noodles
+            </p>
+
+            <p>
+                Description: Stir-fried noodles tossed with
+                fresh vegetables and delicious Asian sauces.
+            </p>
+
+            <p class="price">
+                Price: ₹160
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.5
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 7 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80"
+                alt="Chocolate Cake">
+
+            <h2>
+                Chocolate Cake
+            </h2>
+
+            <p>
+                Item Name: Chocolate Cake
+            </p>
+
+            <p>
+                Description: Soft and moist chocolate cake
+                layered with rich chocolate cream.
+            </p>
+
+            <p class="price">
+                Price: ₹150
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.9
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+        <!-- Menu Item 8 -->
+
+        <div class="menu-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80"
+                alt="French Fries">
+
+            <h2>
+                French Fries
+            </h2>
+
+            <p>
+                Item Name: French Fries
+            </p>
+
+            <p>
+                Description: Crispy golden potato fries
+                seasoned with a delicious blend of spices.
+            </p>
+
+            <p class="price">
+                Price: ₹100
+            </p>
+
+            <p class="rating">
+                Rating: ⭐ 4.6
+            </p>
+
+            <a href="cart.html" class="cart-btn">
+                Add to Cart
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
